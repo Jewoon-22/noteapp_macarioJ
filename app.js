@@ -1,4 +1,5 @@
 const add = require('./add')
+const del= require('./del')
 const write = require('./write')
 const read = require('./read')
 const present = require('./present')
@@ -24,4 +25,11 @@ if(data[2] == 'read') {
     const present = require('./present')
 
     present(read())
+}
+if(data[2] === "delete") {
+    let id=data[3]
+    let oldNote=read()
+    let del=require('./del')
+    del(id,oldNote);
+    console.log(read());
 }
